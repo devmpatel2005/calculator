@@ -6,6 +6,7 @@ let operation = null;
 
 function addNum(num) {
     disp.textContent += num;
+    
     if(operation !== null){
         currentB+=num;
     }
@@ -26,6 +27,19 @@ function clearDisplay() {
     currentA="";
     currentB="";
     operation=null;
+}
+
+function delItem(){
+    disp.textContent = disp.textContent.slice(0, -1);
+    if(operation === null){
+        currentA = currentA.slice(0,-1);
+    }
+    else if(currentB === ""){
+        operation = null;
+    }
+    else{
+        currentB = currentB.slice(0,-1);
+    }
 }
 
 
@@ -69,7 +83,7 @@ function getAns(){
         let result = operate(numA, numB, operation);
         disp.textContent = result;
 
-        currentA = "";
+        currentA = result;
         currentB = "";
         operation = null;
     }
