@@ -1,19 +1,36 @@
 let disp = document.getElementById('display');
-let btns = document.getElementsByTagName('BUTTON');
-
+let currentA = "";
+let currentB = "";
+let operation = null;
 
 
 function addNum(num) {
     disp.textContent += num;
+    if(operation !== null){
+        currentB+=num;
+    }
+    else{
+        currentA+=num;
+    }
+}
+
+function addOperation(op){
+    if(!operation && currentA !== ""){
+        operation = op;
+        disp.textContent += op;
+    }
 }
 
 function clearDisplay() {
     disp.textContent = "";
+    currentA="";
+    currentB="";
+    operation=null;
 }
 
 
 function add (a, b){
-    return + b;
+    return a + b;
 }
 
 function subtract(a, b){
@@ -44,3 +61,16 @@ function operate(a, b, operation){
 }
 
 
+function getAns(){
+    if(currentA !== "" && currentB !== "" && operation !== null){
+        let numA = parseFloat(currentA);
+        let numB = parseFloat(currentB);
+
+        let result = operate(numA, numB, operation);
+        disp.textContent = result;
+
+        currentA = "";
+        currentB = "";
+        operation = null;
+    }
+}
