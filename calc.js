@@ -28,6 +28,17 @@ function percent(){
     }
 }
 
+function flipSign(){
+    if(currentB !== "" && operation !== null){
+        currentB = (parseFloat(currentB) / -1).toString();
+        disp.textContent += currentA + operation + currentB;
+    }
+    else if(operation === null && currentA !== ""){
+        currentA = (parseFloat(currentA) / -1).toString();
+        disp.textContent = currentA;
+    }
+}
+
 function addOperation(op){
     if(!operation && currentA !== ""){
         operation = op;
