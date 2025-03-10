@@ -17,6 +17,17 @@ function addNum(num) {
     }
 }
 
+function percent(){
+    if(currentB !== "" && operation !== null){
+        currentB = (parseFloat(currentB) / 100).toString();
+        disp.textContent += currentA + operation + currentB;
+    }
+    else if(operation === null && currentA !== ""){
+        currentA = (parseFloat(currentA) / 100).toString();
+        disp.textContent = currentA;
+    }
+}
+
 function addOperation(op){
     if(!operation && currentA !== ""){
         operation = op;
@@ -85,7 +96,7 @@ function getAns(){
         let result = operate(numA, numB, operation);
         disp.textContent = result;
 
-        currentA = result;
+        currentA = String(result);
         currentB = "";
         operation = null;
     }
