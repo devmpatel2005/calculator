@@ -6,7 +6,9 @@ let operation = null;
 
 function addNum(num) {
     disp.textContent += num;
-    
+    if(num === '.' && ((operation === null && currentA.includes('.') || (operation !== null && currentB.includes('.'))))){
+       return; 
+    }
     if(operation !== null){
         currentB+=num;
     }
