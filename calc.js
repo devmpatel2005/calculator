@@ -1,3 +1,17 @@
+let disp = document.getElementById('display');
+let btns = document.getElementsByTagName('BUTTON');
+
+
+
+function addNum(num) {
+    disp.textContent += num;
+}
+
+function clearDisplay() {
+    disp.textContent = "";
+}
+
+
 function add (a, b){
     return + b;
 }
@@ -13,10 +27,6 @@ function multiply(a, b){
 function divide(a, b){
     return a/b;
 }
-
-let num1;
-let num2;
-let operation;
 
 function operate(a, b, operation){
     if(String(operation) == '+'){

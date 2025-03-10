@@ -7,38 +7,40 @@
 </head>
     <body>
         <div id="calc">
-            <div id="display">6969</div>
+            <div id="display"></div>
             <div class="row1">
-                <button>C</button>
+                <button onclick="clearDisplay()">C</button>
                 <button>Del</button>
                 <button>%</button>
                 <button>&divide</button>
             </div>
             <div class="row2">
-                <button>9</button>
-                <button>8</button>
-                <button>7</button>
+                <button onclick= "addNum('9')">9</button>
+                <button onclick= "addNum('8')">8</button>
+                <button onclick= "addNum('7')">7</button>
                 <button>*</button>
             </div>
             <div class="row3">
-                <button>6</button>
-                <button>5</button>
-                <button>4</button>
+                <button onclick= "addNum('6')">6</button>
+                <button onclick= "addNum('5')">5</button>
+                <button onclick= "addNum('4')">4</button>
                 <button>-</button>
             </div>
             <div class="row4">
-                <button>3</button>
-                <button>2</button>
-                <button>1</button>
+                <button onclick= "addNum('3')">3</button>
+                <button onclick= "addNum('2')">2</button>
+                <button onclick= "addNum('1')">1</button>
                 <button>+</button>
             </div>
             <div class="row5">
                 <button>.</button>
-                <button>0</button>
+                <button onclick= "addNum('0')">0</button>
                 <button>+/-</button>
                 <button>=</button>
             </div>
         </div>
     
+
+        <script src="calc.js"></script>
     </body>
 </html>

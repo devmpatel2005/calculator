@@ -36,6 +36,8 @@ button {
     border-radius: 8px;
     background-color: rgb(0, 0, 178);
     padding-right: 4px;
+    height: 60px;
+    
 }
 
 .row1, .row2, .row3, .row4, .row5{
